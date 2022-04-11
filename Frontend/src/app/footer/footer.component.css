@@ -1,0 +1,40 @@
+*{
+    margin: 0%;
+}
+.footer{
+    background-color: #232324;
+    color: grey;
+    border-radius: 3px;
+    position: sticky;
+    width: 100%;
+}
+img{
+    width: 80px;
+}
+
+.companylogo
+{
+    
+    margin-left: 5%;
+    display: flex;
+    position: absolute;
+
+}
+
+.companylogo h2
+{
+    margin-top: 22px;  
+    background-image: linear-gradient(60deg, 
+    #c9ad0f , #af0d71);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.d-flex
+{
+    position: relative;
+    left: 80%;
+    padding: 20px;
+    
+    width: 20%;
+}

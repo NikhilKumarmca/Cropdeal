@@ -1,0 +1,36 @@
+.header{
+    background-color: #072742;
+    box-shadow: 1px 8px 12px #cecbcbc2;
+    border-radius: 2px;
+}
+
+img{
+    width: 80px;
+}
+
+.companylogo
+{
+    width: 14%;
+    margin-left: 5%;
+    display: flex;
+
+}
+
+
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.companylogo h2
+{
+    float: right;
+    margin-top: 12%;
+    background-image: linear-gradient(60deg, 
+    #c9ad0f , #af0d71);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+

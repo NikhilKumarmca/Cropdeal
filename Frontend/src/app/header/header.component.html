@@ -1,0 +1,25 @@
+<div class="header">
+    
+    <div class="companylogo">
+        <img alt="Logo" src="https://www.graphicsprings.com/filestorage/stencils/9b8b99137c12847ef780dd402b8a4070.png?width=500&height=500" />
+        <h2>CropDeal</h2>
+    </div>
+        
+    
+    <ul *ngIf="islogin">
+        <li>
+            <a routerLink="/" (click)="logout()" >Home</a>
+        </li>
+        <li>
+            <a routerLink="/login"  (click)="logout()">Login</a>
+        </li>
+    </ul>
+
+    <!-- <button routerLink="/login" *ngIf="login"  (click)="loginFunction()" class="btn btn-outline-primary ">Login</button>
+    <button routerLink="" *ngIf="home" (click)="homeFunction()" class="btn btn-outline-primary ">Home</button> -->
+    <!-- <button routerLink="" *ngIf="logout" (click)="logoutFunction()" class="btn btn-outline-danger">Logout</button> -->
+
+    
+
+</div>
+

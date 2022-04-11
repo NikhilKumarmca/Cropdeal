@@ -1,0 +1,56 @@
+<h2>Product List</h2>
+    <hr>
+<div class="home">
+    
+    <mat-card class="example-card" *ngFor="let product of products; let i = index">
+        <form>
+        <div class="detail">
+            
+        
+
+            <table>
+                <tr>
+                    <td>
+                        <mat-card-subtitle><b>Name</b></mat-card-subtitle>
+                    </td>
+                    <td>
+                        <mat-card-content >{{product.productName}}</mat-card-content>
+                    </td>
+                    <td>
+                        <mat-card-subtitle><b>Type</b></mat-card-subtitle>
+                    </td>
+                    <td>
+                        <mat-card-content>{{product.productType}}</mat-card-content>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-card-subtitle><b>Price</b></mat-card-subtitle>
+                    </td>
+                    <td colspan="2">
+                        <mat-card-content>{{product.productPrice | currency:"INR"}}</mat-card-content>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-card-subtitle><b>Location</b></mat-card-subtitle>
+                    </td>
+                    <td colspan="3">
+                        <mat-card-content>{{product.location}}</mat-card-content>
+                    </td>
+                </tr>
+            </table>
+
+       
+            
+            
+            
+        </div>
+        <hr/>
+        <button (click)="openDialog(i)" class="btn1" mat-raised-button color="warn">Buy</button>
+        <button (click)="view(i)" class="btn2" mat-raised-button >view</button>
+    
+    </form>
+    </mat-card>
+    
+</div>

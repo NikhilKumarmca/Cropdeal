@@ -1,0 +1,61 @@
+server:
+  port: 8000
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: farmer-service
+          uri:
+            lb://farmer-service
+          predicates:
+            - Path=/farmer/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: farmer-service
+                fallbackuri: forward:/farmerServiceFallback
+
+        - id: product-service
+          uri:
+            lb://product-service
+          predicates:
+            - Path=/product/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: product-service
+                fallbackuri: forward:/productServiceFallback
+
+        - id: dealer-service
+          uri:
+            lb://dealer-service
+          predicates:
+            - Path=/dealer/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: dealer-service
+                fallbackuri: forward:/dealerServiceFallback
+
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillieseconds: 5000
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

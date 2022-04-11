@@ -1,0 +1,40 @@
+<div class="login_form">
+    <h3>Login</h3>
+    <form #loginForm="ngForm" (ngSubmit)="Login(loginForm.value);loginForm.reset();">
+        <div class="form-group">
+            <input type="email" class="form-control" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" ngModel placeholder="Enter your email"  name={{name}}Email required>
+            <div   *ngIf="email.errors && (email.invalid && email.touched)">
+                <small class="text-danger" *ngIf="email.errors.required" >Email is required</small>
+                <small class="text-danger" *ngIf="email.errors.pattern">This is not valid email </small>
+            </div>
+        </div>
+        
+        <div class="form-group input-group mb-3">     
+            <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="material-icons" matSuffix (click) ="hide=!hide" >{{hide ? 'visibility':'visibility_off' }}</i></span>
+            <input type="password" class="form-control" #password="ngModel" [type]="hide ? 'password' : 'text' " [class.is-invalid]="password.invalid && password.touched" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" ngModel placeholder="Enter your password" name={{name}}Password aria-describedby="basic-addon1" required>
+            </div>
+            <div   *ngIf="password.errors && (password.invalid && password.touched)">
+                <small class="text-danger" *ngIf="password.errors.required" >Password is required</small>
+                <small class="text-danger" *ngIf="password.errors.pattern">you should add atleast one uppercase, lowercase, symbol, number</small>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="form-check"> 
+
+                <input  type="radio" class="form-check-input"#farmer (click)="getclient(farmer.value)"  name="client" value="farmer" required/>Farmer
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" #dealer (click)="getclient(dealer.value)"  name="client" value="dealer" required/>Dealer
+            </div>
+        </div>
+        
+       
+        
+        <button [disabled]="loginForm.form.invalid">Login</button>
+        
+
+        
+    </form>
+</div>

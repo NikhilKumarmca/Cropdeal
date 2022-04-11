@@ -1,0 +1,90 @@
+<!-- <p>signup works!</p> -->
+<div class="signup_form ">
+    <h1>Create Your Account</h1>
+    <form #signupForm="ngForm" (ngSubmit)="registation(signupForm.value);signupForm.reset()" class="grid-container">
+
+        <!-- <div class="form-group two">
+            <input type="text" #Id="ngModel" class="form-control" ngModel name={{client}}Id [class.is-invalid]="Id.invalid && Id.touched" placeholder="Enter your Id" required/>
+            <small class="text-danger" [class.d-none]="Id.valid || Id.untouched" >Name is required</small>
+        </div> -->
+
+        <div class="form-group two">
+            <input type="text" #name="ngModel" class="form-control" ngModel name={{client}}Name [class.is-invalid]="name.invalid && name.touched" placeholder="Enter your full name" required/>
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched" >Name is required</small>
+        </div>
+
+        <div class="form-group one">
+            <div class="form-check "> 
+                <input type="radio" class="form-check-input" ngModel name={{client}}Gender value="Male" required/>Male
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input type="radio" class="form-check-input" ngModel name={{client}}Gender value="Female" required/>Female
+            </div>
+        </div>
+
+        <div class="form-group one">
+            <input type="email" ngModel #email="ngModel" name={{client}}Email class="form-control " [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" placeholder="Enter your emailId" required/>
+            <div class="test"  *ngIf="email.errors && (email.invalid && email.touched)">
+                <small class="text-danger" *ngIf="email.errors.required" >Email is required</small>
+                <small class="text-danger" *ngIf="email.errors.pattern">This is not valid email </small>
+            </div>
+
+            
+        </div>
+
+        <div class="form-group">
+            <input type="text" ngModel #mobile="ngModel" name={{client}}Phone class="form-control size" [class.is-invalid]="mobile.invalid && mobile.touched" pattern="^[6-9]\d{9}$" placeholder="Enter your mobile number" required/>
+            <div  *ngIf="mobile.errors && (mobile.invalid && mobile.touched)">
+                <small class="text-danger" *ngIf="mobile.errors.required" >Mobile number is required</small>
+                <small class="text-danger" *ngIf="mobile.errors.pattern">you should entera valid mobile number</small>
+            </div>
+        </div>
+
+        <div class="form-group lg-12 one">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"><i class="material-icons" matSuffix (click) ="hide=!hide" >{{hide ? 'visibility':'visibility_off' }}</i></span>
+            <input type="password" [(ngModel)]="registerArray.password" #password="ngModel" name={{client}}Password class="form-control size" [type]="hide ? 'password' : 'text' " [class.is-invalid]="password.invalid && password.touched" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter your password" aria-describedby="basic-addon1" required/>
+            </div>
+            <div  class="error" *ngIf="password.errors && (password.invalid && password.touched)">
+                <small class="text-danger" *ngIf="password.errors.required" >Password is required</small>
+                <small class="text-danger" *ngIf="password.errors.pattern">you should add atleast one uppercase, lowercase, symbol, number</small>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon2"><i class="material-icons" matSuffix (click) ="chide=!chide" >{{chide ? 'visibility':'visibility_off' }}</i></span>
+            <input type="password" #confirmpassword="ngModel" [(ngModel)]="registerArray.confirmpassword" name="confirmpassword" class="form-control size" [type]="chide ? 'password' : 'text' " [class.is-invalid]="confirmpassword.invalid && confirmpassword.touched" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Enter your confirm password" aria-describedby="basic-addon2" required/>
+            </div>
+            <div  *ngIf="confirmpassword.errors && (confirmpassword.invalid && confirmpassword.touched)">
+                <small class="text-danger" *ngIf="confirmpassword.errors.required" >Password is required</small>
+                <small class="text-danger" *ngIf="confirmpassword.errors.pattern">you should add atleast one uppercase, lowercase, symbol, number</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check"> 
+                <input type="radio" class="form-check-input" #farmer (click)="getsignupclient(farmer.value)" name="client" value="farmer"  required>Farmer
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input type="radio" class="form-check-input"  #dealer (click)="getsignupclient(dealer.value)"  name="client" value="dealer" required>Dealer
+            </div>
+        </div>
+
+        <div class="form-group two">
+            <textarea class="form-control" ngModel #address="ngModel" name={{client}}Address placeholder="Enter Your full address" required></textarea>
+        </div>
+
+        <div class="form-group two">
+            <button [disabled]="signupForm.form.invalid" class="btn btn-success one grid-item" >SignUp</button>
+           
+        </div>
+    </form>
+</div>

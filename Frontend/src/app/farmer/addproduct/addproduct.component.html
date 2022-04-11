@@ -1,0 +1,30 @@
+<div class="newProduct">
+    <h3>{{header}}</h3>
+<form #addProduct="ngForm" (ngSubmit)="addProduct.reset()">
+    <mat-form-field appearance="fill">
+        <mat-label>Product Name</mat-label>
+        <input name="productName" [(ngModel)]="product.productName" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Product Type</mat-label>
+        <input name="productType" [(ngModel)]="product.productType" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Product Price</mat-label>
+        <input name="productPrice" [(ngModel)]="product.productPrice" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Product Location</mat-label>
+        <input name="location"  [(ngModel)]="product.location" matInput>
+    </mat-form-field>
+    
+    <div mat-dialog-actions>
+        <button *ngIf="addbtn" mat-raised-button class="btn1"(click)="addPro(addProduct.value);" color="primary">Add</button>
+        <button *ngIf="updatebtn" mat-raised-button class="btn1"(click)="updatepro(addProduct.value)" color="primary">Update</button>
+        <button mat-raised-button class="btn2" (click)="oncancel()" color="warn" cdkFocusInitial>Cancel</button>
+      </div>
+</form>
+</div>
+    
+    

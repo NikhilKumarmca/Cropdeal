@@ -1,0 +1,54 @@
+
+<h2>Order List</h2>
+    <hr>
+<div class="order">
+    
+    <mat-card class="example-card" *ngFor="let order of orders; let i = index">
+        <form>
+        <div class="detail">
+            
+        
+
+            <table>
+                <tr>
+                    <td>
+                        <mat-card-subtitle><b>ProductName</b></mat-card-subtitle>
+                    </td>
+                    <td>
+                        <mat-card-content >{{order.productName}}</mat-card-content>
+                    </td>
+                    <td>
+                        <mat-card-subtitle><b>Price</b></mat-card-subtitle>
+                    </td>
+                    <td>
+                        <mat-card-content>{{order.productPrice}}</mat-card-content>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-card-subtitle><b>Quantity</b></mat-card-subtitle>
+                    </td>
+                    <td >
+                        <mat-card-content>{{order.productQnt }}</mat-card-content>
+                    </td>
+                    <td>
+                        <mat-card-subtitle><b>Total Amount</b></mat-card-subtitle>
+                    </td>
+                    <td >
+                        <mat-card-content>{{order.totalAmt}}</mat-card-content>
+                    </td>
+                </tr>
+            </table>
+
+       
+            
+            
+            
+        </div>
+        <!-- <hr/> -->
+        <!-- <button *ngIf=butn  class=payment{{i}} mat-raised-button color="warn">Payment</button> -->
+    
+    </form>
+    </mat-card>
+    
+</div>

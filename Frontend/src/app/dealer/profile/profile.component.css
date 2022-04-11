@@ -1,0 +1,24 @@
+.grid-container{
+    display: grid;
+    grid-template-columns:  auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.one {
+    grid-column: 4 / 1  ;
+}
+.two{
+    grid-column:  span 2;
+}
+
+.edit{
+    position: fixed;
+    top:80%;
+    left:95%;
+
+}
+
+.material-icons{
+    color: gray;
+}

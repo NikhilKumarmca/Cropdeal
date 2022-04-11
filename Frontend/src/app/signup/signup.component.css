@@ -1,0 +1,45 @@
+.signup_form{
+    width: 55%;
+    position: absolute;
+    top:15%;
+    left: 7%;
+    /* box-shadow: 2px 5px 12px #c2bebee0; */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 2%;
+    
+}
+.signup_form h1{
+    text-align: center;
+}
+
+.form-group{
+    margin: 5px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns:  auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.one {
+    grid-column: 1 / 2;
+}
+.two{
+    grid-column:  span 2;
+}
+
+.one
+{
+    grid-column: 1/ 2;
+}
+
+button{
+    width: 100%;
+}
+
+.material-icons{
+    color: gray;
+}

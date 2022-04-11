@@ -1,0 +1,29 @@
+.home
+{
+    margin: 2px 10px;
+}
+
+.carousel img,.carousel{
+    height: 450px;
+}
+
+.Body
+{
+    width: 30%;
+    margin: 1% auto ;
+    text-align: justify;
+    float: left;
+    
+    
+}
+.row1
+{
+    
+ display: inline-flex;
+ flex-wrap: wrap;   
+ text-align: center;
+}
+
+.Body p{
+    color: grey;
+}

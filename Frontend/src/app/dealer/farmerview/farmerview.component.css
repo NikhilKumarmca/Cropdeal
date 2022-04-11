@@ -1,0 +1,13 @@
+.detail h3{
+    text-align: center;
+    padding: 10px 5px;
+    font-weight: 700;
+    color: #16848b;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+td{
+    padding: 5px 15px;
+    font-size: 26px !important;
+    color: #833441;
+}

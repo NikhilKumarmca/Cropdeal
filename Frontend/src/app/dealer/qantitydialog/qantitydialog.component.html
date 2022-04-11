@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+  <p>Enter Quantity of Product </p>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter Quantity</mat-label>
+    <input matInput #quantity >
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-raised-button class="dialog-btn" color="warn" (click)="onNoClick()">Cancel</button> -->
+  <button mat-raised-button class="dialog-btn" color="primary" [mat-dialog-close]="quantity.value" cdkFocusInitial>Payment</button>
+  <button mat-raised-button class="dialog-btn" color="warn" mat-dialog-close cdkFocusInitial>Cancel</button>
+</div>
